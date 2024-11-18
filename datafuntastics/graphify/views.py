@@ -5,7 +5,15 @@ from io import BytesIO
 
 # Create your views here.
 def v_index(request):
-    return HttpResponse("Graphity index")
+    #return HttpResponse("Graphity index")
+    predicion = "Incrementode 5% en ventas"
+    return render(request, "graphify/index.html", {
+    "axis_x" : "Productos",
+    "axis_y" : "Cantidad",
+    "logo" : "https://img.freepik.com/premium-vector/analytic-graph-logo-vector-icon-illustration_12860-119.jpg ",
+    "predicion" : predicion
+    })
+
 
 def v_reporte_png(request):
     # Datos para el gráfico (puedes adaptarlos según tus necesidades)
